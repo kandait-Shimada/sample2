@@ -1,0 +1,14 @@
+<%@page contentType="text/html; charset=UTF-8" %>
+<html>
+	<head>
+		<title>Git Test1</title>
+	</head>
+	<body>
+
+		Gitのテストファイルです
+
+		自身の名前を入力してください
+
+	</body>
+</html>
+
