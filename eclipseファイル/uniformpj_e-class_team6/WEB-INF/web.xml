@@ -1,6 +1,6 @@
 <web-app>
 
-	<!-- ListServlet -->
+	<!-- UniformListServlet -->
 	<servlet>
 		<servlet-name>uniformListMapping</servlet-name>
 		<servlet-class>servlet.UniformListServlet</servlet-class>
@@ -30,54 +30,74 @@
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
 
-	<!-- InsertIntoCartServlet -->
+	<!-- OrderServlet -->
 	<servlet>
-		<servlet-name>insertIntoCartMapping</servlet-name>
-		<servlet-class>servlet.InsertIntoCartServlet</servlet-class>
+		<servlet-name>orderMapping</servlet-name>
+		<servlet-class>servlet.OrderServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>insertIntoCartMapping</servlet-name>
-		<url-pattern>/insertIntoCart</url-pattern>
+		<servlet-name>orderMapping</servlet-name>
+		<url-pattern>/order</url-pattern>
 	</servlet-mapping>
 
-	<!-- ShowCartServlet -->
+	<!-- CartServlet -->
 	<servlet>
-		<servlet-name>showCartMapping</servlet-name>
-		<servlet-class>servlet.ShowCartServlet</servlet-class>
+		<servlet-name>cartMapping</servlet-name>
+		<servlet-class>servlet.CartServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>showCartMapping</servlet-name>
-		<url-pattern>/showCart</url-pattern>
+		<servlet-name>cartMapping</servlet-name>
+		<url-pattern>/cart</url-pattern>
 	</servlet-mapping>
 
-	<!-- BuyConfirmServlet -->
+	<!-- OrderCompletedServlet -->
 	<servlet>
-		<servlet-name>buyConfirmMapping</servlet-name>
-		<servlet-class>servlet.BuyConfirmServlet</servlet-class>
+		<servlet-name>orderCompletedMapping</servlet-name>
+		<servlet-class>servlet.OrderCompletedServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>buyConfirmMapping</servlet-name>
-		<url-pattern>/buyConfirm</url-pattern>
+		<servlet-name>orderCompletedMapping</servlet-name>
+		<url-pattern>/orderCompleted</url-pattern>
 	</servlet-mapping>
 
-	<!-- ShowOrderedItemServlet -->
+	<!-- OrderDetailServlet -->
 	<servlet>
-		<servlet-name>showOrderedItemMapping</servlet-name>
-		<servlet-class>servlet.ShowOrderedItemServlet</servlet-class>
+		<servlet-name>orderDetailMapping</servlet-name>
+		<servlet-class>servlet.OrderDetailServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>showOrderedItemMapping</servlet-name>
-		<url-pattern>/showOrderedItem</url-pattern>
+		<servlet-name>orderDetailMapping</servlet-name>
+		<url-pattern>/orderDetail</url-pattern>
 	</servlet-mapping>
 
-	<!-- InsertIniDataServlet -->
+	<!-- OrderListServlet -->
 	<servlet>
-		<servlet-name>insertIniDataMapping</servlet-name>
-		<servlet-class>servlet.InsertIniDataServlet</servlet-class>
+		<servlet-name>orderListMapping</servlet-name>
+		<servlet-class>servlet.OrderListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>insertIniDataMapping</servlet-name>
-		<url-pattern>/insertIniData</url-pattern>
+		<servlet-name>orderListMapping</servlet-name>
+		<url-pattern>/orderList</url-pattern>
+	</servlet-mapping>
+
+	<!-- PaymentServlet -->
+	<servlet>
+		<servlet-name>paymentMapping</servlet-name>
+		<servlet-class>servlet.PaymentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>paymentMapping</servlet-name>
+		<url-pattern>/payment</url-pattern>
+	</servlet-mapping>
+
+	<!-- SendingServlet -->
+	<servlet>
+		<servlet-name>sendingMapping</servlet-name>
+		<servlet-class>servlet.SendingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sendingMapping</servlet-name>
+		<url-pattern>/order</url-pattern>
 	</servlet-mapping>
 
 
