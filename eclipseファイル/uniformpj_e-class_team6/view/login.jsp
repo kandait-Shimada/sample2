@@ -10,7 +10,6 @@
 	<head>
 		<title>神田ユニフォームログイン画面</title>
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
-
 	</head>
 
 	<body>
@@ -21,20 +20,36 @@
 	<%@include file="/common/header.jsp" %>
 
 	<!-- タイトル部分 -->
+	<div id="menu">
+	<div id="container">
+
+		<div id="page_title">
+			<h2>ログイン画面</h2>
+		</div>
+
+	</div>
+	</div>
+
+	<!-- ログインのコンテンツ部分 -->
 	<div id="main" class="container">
+		<form action="<%=request.getContextPath()%>/login" method="post">
+			<table>
+				<tr>
+					<td>ユーザー<input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>パスワード<input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="ログイン" ></td>
+				</tr>
+			</table>
+		</form>
 
-	<div id="page_title">
-		<h2>ログイン画面</h2>
 	</div>
 
-	<hr style="background-color: blue;">
-
-		<p>ユーザー<input type="text" name="name"></p>
-		<p>パスワード<input type="text" name="name"></p>
-		<input type="submit" value="ログイン" >
-
-	</div>
 	<%@include file="/common/footer.jsp" %>
+
 	</div>
 	</body>
 </html>

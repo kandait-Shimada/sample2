@@ -1,12 +1,17 @@
 <!--
   プログラム名：ユニフォーム受注管理システム
-  プログラムの説明：注文画面
-  作成者：杉崎達也
-  作成日付：2023/06/21
+  プログラムの説明：ユーザー情報を入力し、購入画面に遷移する
+  作成者：藤巻健太郎
+  作成日付：2023/06/26
 -->
 
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@page import="java.util.ArrayList" %>
+<%
 
+//もしかしたらこの欄にリクエストスコープ（カート商品情報）をしゅとくするかも
+
+%>
 <html>
 	<head>
 		<title>神田ユニフォーム注文画面</title>
@@ -41,19 +46,19 @@
 			<div id="main" class="container">
 
 				<!--  入力フォーム -->
-				<form action="<%=request.getContextPath()%>/insert">
-					<table class="input-table" align="center">
+				<form action="<%=request.getContextPath()%>/orderCompleted" method="post">
+					<table class="input-table">
 					<tr>
 						<th>名前</th>
-						<td><input type="text" name="isbn"></td>
+						<td><input type="text" name="username"></td>
 					</tr>
 					<tr>
 						<th>住所</th>
-						<td><input type="text" name="title"></td>
+						<td><input type="text" name="address"></td>
 					</tr>
 					<tr>
 						<th>メールアドレス</th>
-						<td><input type="text" name="price"></td>
+						<td><input type="text" name="user_mail"></td>
 					</tr>
 					</table>
 

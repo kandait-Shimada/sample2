@@ -6,6 +6,12 @@
 -->
 
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@page import="java.util.ArrayList,bean.Uniform,util.MyFormat"%>
+
+<%
+	ArrayList<Uniform> uniform_list = (ArrayList<Uniform>) request.getAttribute("uniform_list");
+	MyFormat format = new MyFormat();
+%>
 
 <html>
 <head>
@@ -37,41 +43,46 @@
 			</div>
 		</div>
 
-		<table style="margin: auto">
-			<tr>
-				<th style="background-color: #6666ff; width: 200px">商品番号</th>
-				<th style="background-color: #6666ff; width: 200px">商品</th>
-				<th style="background-color: #6666ff; width: 200px">価格</th>
-				<th style="background-color: #6666ff; width: 250px">在庫数</th>
-				<th style="background-color: #6666ff; width: 250px"></th>
-			</tr>
 
 
-			<tr>
-				<td style="text-align: center; width: 200px">&nbsp;</td>
-				<td style="text-align: center; width: 200px">&nbsp;</td>
-				<td style="text-align: center; width: 200px">&nbsp;</td>
-				<td style="text-align: center; width: 250px" colspan="2">&nbsp;</td>
-
-			</tr>
-
-			<!-- テスト用 -->
+		<!-- 書籍情報リスト -->
+		<table class="list-table">
+			<thead>
+				<tr>
+					<th>商品番号</th>
+					<th>商品名</th>
+					<th>在庫数</th>
+					<th>価格</th>
+					<th>カートに入れる</th>
+				</tr>
+			</thead>
 			<tbody>
-						<tr>
-							<td>00001</td>
-							<td>サッカーユニフォーム</td>
-							<td>5500（税込み）</td>
-							<td>8</td>
-							<td>カートに入れる</td>
-						</tr>
+				<%
+					if (uniform_list != null) {
+						for (Uniform uniform : uniform_list) {
+				%>
+				<tr>
+					<td><%=uniform.getUniformid()%></td>
+					<td><%=uniform.getName()%></td>
+					<td><%=uniform.getStock()%></td>
+					<td><%=format.moneyFormat(uniform.getPrice())%></td>
+					<td><a
+						href="<%=request.getContextPath()%>/cart?iuniform_id=<%=uniform.getUniformid()%>">カートに入れる</a>
+					</td>
 
-
-					</tbody>
-
+				</tr>
+				<%
+					}
+					}
+				%>
+			</tbody>
 		</table>
+
+
 		<!-- フッター部分 -->
 		<%@ include file="/common/footer.jsp"%>
 	</div>
 
 </body>
 </html>
+

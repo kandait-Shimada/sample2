@@ -8,6 +8,12 @@
 
 <%@page contentType="text/html; charset=UTF-8"%>
 
+<%@page import="java.util.*,bean.OrderedItem"%>
+<%
+	ArrayList<OrderedItem> ordered_list = (ArrayList<OrderedItem>) request
+			.getAttribute("ordered_list");
+%>
+
 <html>
 	<head>
 		<title>神田ユニフォーム受注一覧画面</title>
@@ -53,21 +59,23 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td>00001</td>
-							<td>田中</td>
-							<td>2023/6/21</td>
-							<td>〇</td>
-							<td>×</td>
-						</tr>
+					<%
+					if (ordered_list != null) {
+						for (OrderedItem ordered : ordered_list) {
+					%>
 
 						<tr>
-							<td>00002</td>
-							<td>佐藤</td>
-							<td>2023/6/22</td>
-							<td>×</td>
-							<td>×</td>
+							<td><a href="<%=request.getContextPath()%>/orderDetail?purchase_id=<%=ordered.getPurchase_id()%>&cmd=orderDetail"><%=ordered.getPurchase_id() %></a></td>
+							<td><%=ordered.getUsername() %></td>
+							<td><%=ordered.getPurchase_day().replace("-","/") %></td>
+							<td><%=ordered.getPaymentStatus() %></td>
+							<td><%=ordered.getSendingStatus() %></td>
 						</tr>
+
+					<%
+						}
+					}
+					%>
 
 					</tbody>
 

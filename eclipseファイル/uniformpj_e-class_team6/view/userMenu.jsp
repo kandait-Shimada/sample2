@@ -24,7 +24,7 @@
 	<div style="margin-bottom: 350px">
 		<table style="margin: auto; border: 0;">
 			<tr>
-				<td><a href="<%=request.getContextPath()%>/view/uniformList.jsp">【商品一覧】</a></td>
+				<td><a href="<%=request.getContextPath()%>/uniformList">【商品一覧】</a></td>
 			</tr>
 			<tr>
 				<td><a href="<%=request.getContextPath()%>/cart">【カート内確認】</a></td>

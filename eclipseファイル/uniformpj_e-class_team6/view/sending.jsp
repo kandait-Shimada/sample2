@@ -7,10 +7,16 @@
 
 
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@page import="java.util.*,bean.OrderedItem"%>
+
+<%
+	ArrayList<OrderedItem> ordered_list = (ArrayList<OrderedItem>) request
+			.getAttribute("ordered_list");
+%>
 
 <html>
 	<head>
-		<title>神田ユニフォーム入金確認画面</title>
+		<title>神田ユニフォーム発送確認画面</title>
 		<link rel="stylesheet"  href="<%=request.getContextPath()%>/css/style.css">
 	</head>
 
@@ -42,7 +48,7 @@
 			<div id="main" class="container">
 
 				<!-- 注文番号と住所 -->
-				<table class="payment-table">
+				<table class="sending-table">
 					<thead>
 						<tr>
 							<th>注文番号</th>
@@ -50,12 +56,21 @@
 						</tr>
 					</thead>
 
+<%
+					if (ordered_list != null) {
+						for (OrderedItem ordered : ordered_list) {
+
+					%>
 					<tbody>
 						<tr>
-							<td>00001</td>
-							<td>東京都○○○○</td>
+							<td><%=ordered.getPurchase_id() %></td>
+							<td><%=ordered.getAddress() %></td>
 						</tr>
 					</tbody>
+					<%
+						}
+					}
+					%>
 				</table>
 
 				<!-- 更新ボタン -->

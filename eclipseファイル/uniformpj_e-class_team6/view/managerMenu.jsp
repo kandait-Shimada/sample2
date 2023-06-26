@@ -34,8 +34,8 @@
 			<!-- コンテンツ(本文) -->
 			<div id="main" class="container">
 				<ul class="link">
-					<li>【受注一覧画面】</li>
-					<li>【ログアウト】</li>
+					<li><a href="<%=request.getContextPath()%>/orderList">【受注一覧画面】</a></li>
+					<li><a href="<%=request.getContextPath()%>/logout" class="mb50">【ログアウト】</a></li>
 				</ul>
 			</div>
 

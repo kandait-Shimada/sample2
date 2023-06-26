@@ -97,7 +97,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>sendingMapping</servlet-name>
-		<url-pattern>/order</url-pattern>
+		<url-pattern>/sending</url-pattern>
 	</servlet-mapping>
 
 

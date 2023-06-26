@@ -3,6 +3,10 @@
   プログラムの説明：エラー画面
   作成者：嶋田清春
   作成日付：2023/06/21
+  補足：エラーの場合分け
+        遷移先はuserMenu、managerMenu、logout、uniformListです.
+        cmdに入れる文字は遷移先のファイル名を拡張子を除いて入力してください
+
 -->
 
 <%@page contentType="text/html; charset=UTF-8"%>
@@ -42,12 +46,34 @@
 			<!-- コンテンツ部分 -->
 			<div id="main" class="container">
 
-				[メニューに戻る]
+				<p class="error-msg"><%=error %></p>
 
+				<p class="back-link">
+					<%
+					if (cmd.equals("userMenu")) {
+					%>
+						<a href="<%=request.getContextPath()%>/view/userMenu.jsp">[メニューに戻る]</a>
+					<%
+					} else if (cmd.equals("managerMenu")) {
+					%>
+						<a href="<%=request.getContextPath()%>/view/managerMenu.jsp">[メニューに戻る]</a>
+					<%
+					} else if (cmd.equals("logout")) {
+					%>
+						<a href="<%=request.getContextPath()%>/logout">[ログイン画面へ]</a>
+					<%
+					} else if (cmd.equals("uniformlist")) {
+					%>
+						<a href="<%=request.getContextPath()%>/uniformList">[ユニフォーム一覧表示に戻る]</a>
+					<%
+					}
+					%>
+				</p>
 			</div>
 
 			<!-- フッター部分 -->
 			<%@ include file="/common/footer.jsp" %>
+
 
 		</div>
 	</body>
