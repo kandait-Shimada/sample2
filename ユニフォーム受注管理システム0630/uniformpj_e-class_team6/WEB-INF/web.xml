@@ -1,0 +1,108 @@
+<web-app>
+
+	<!-- UniformListServlet -->
+	<servlet>
+		<servlet-name>uniformListMapping</servlet-name>
+		<servlet-class>servlet.UniformListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>uniformListMapping</servlet-name>
+		<url-pattern>/uniformList</url-pattern>
+	</servlet-mapping>
+
+	<!-- LoginServlet -->
+	<servlet>
+		<servlet-name>loginMapping</servlet-name>
+		<servlet-class>servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginMapping</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<!-- LogoutServlet -->
+	<servlet>
+		<servlet-name>logoutMapping</servlet-name>
+		<servlet-class>servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logoutMapping</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<!-- OrderServlet -->
+	<servlet>
+		<servlet-name>orderMapping</servlet-name>
+		<servlet-class>servlet.OrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderMapping</servlet-name>
+		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
+
+	<!-- CartServlet -->
+	<servlet>
+		<servlet-name>cartMapping</servlet-name>
+		<servlet-class>servlet.CartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cartMapping</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+
+	<!-- OrderCompletedServlet -->
+	<servlet>
+		<servlet-name>orderCompletedMapping</servlet-name>
+		<servlet-class>servlet.OrderCompletedServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderCompletedMapping</servlet-name>
+		<url-pattern>/orderCompleted</url-pattern>
+	</servlet-mapping>
+
+	<!-- OrderDetailServlet -->
+	<servlet>
+		<servlet-name>orderDetailMapping</servlet-name>
+		<servlet-class>servlet.OrderDetailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderDetailMapping</servlet-name>
+		<url-pattern>/orderDetail</url-pattern>
+	</servlet-mapping>
+
+	<!-- OrderListServlet -->
+	<servlet>
+		<servlet-name>orderListMapping</servlet-name>
+		<servlet-class>servlet.OrderListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderListMapping</servlet-name>
+		<url-pattern>/orderList</url-pattern>
+	</servlet-mapping>
+
+	<!-- PaymentServlet -->
+	<servlet>
+		<servlet-name>paymentMapping</servlet-name>
+		<servlet-class>servlet.PaymentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>paymentMapping</servlet-name>
+		<url-pattern>/payment</url-pattern>
+	</servlet-mapping>
+
+	<!-- SendingServlet -->
+	<servlet>
+		<servlet-name>sendingMapping</servlet-name>
+		<servlet-class>servlet.SendingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sendingMapping</servlet-name>
+		<url-pattern>/sending</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>20</session-timeout>
+	</session-config>
+
+
+</web-app>

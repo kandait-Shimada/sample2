@@ -1,0 +1,81 @@
+<!--
+  プログラム名：ユニフォーム受注管理システム
+  プログラムの説明：発送確認画面
+  作成者：松井朱奈
+  作成日付：2023/06/21
+-->
+
+
+<%@page contentType="text/html; charset=UTF-8"%>
+<%@page import="java.util.*,bean.OrderedItem"%>
+
+<%
+		OrderedItem orderedItem = (OrderedItem) request.getAttribute("orderedItem");
+%>
+
+<html>
+	<head>
+		<title>神田ユニフォーム発送確認画面</title>
+		<link rel="stylesheet"  href="<%=request.getContextPath()%>/css/style.css">
+	</head>
+
+	<body>
+		<!-- ブラウザ全体 -->
+		<div id="wrap">
+
+			<!--ヘッダー部分-->
+			<%@ include file="/common/header.jsp" %>
+
+			<!-- メニュー部分 -->
+			<div id="menu">
+				<div class="container">
+				<div id="nav">
+						<ul>
+							<li><a href ="<%=request.getContextPath()%>/view/managerMenu.jsp">[メニュー]</a></li>
+						</ul>
+				</div>
+
+					<!-- ページタイトル -->
+					<div id="page_title">
+						<h2>発送確認</h2>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- 発送確認のコンテンツ部分 -->
+			<div id="main" class="container">
+
+				<!-- 注文番号と住所 -->
+				<table class="sending-table">
+					<thead>
+						<tr>
+							<th>注文番号</th>
+							<th>住所</th>
+						</tr>
+					</thead>
+
+
+					<tbody>
+						<tr>
+							<td><%=orderedItem.getPurchase_id() %></td>
+							<td><%=orderedItem.getAddress() %></td>
+						</tr>
+					</tbody>
+
+				</table>
+
+				<table>
+					<tr>
+						<th><a href="<%=request.getContextPath()%>/orderList">【受注一覧画面に戻る】</a></th>
+					</tr>
+				</table>
+			</div>
+
+			<!-- フッター部分 -->
+			<%@ include file="/common/footer.jsp" %>
+
+		</div>
+	</body>
+
+</html>
